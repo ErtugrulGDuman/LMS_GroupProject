@@ -6,7 +6,7 @@ namespace GroupProject.UI.ViewComponents.DefaultViewComponents
     {
         public IViewComponentResult Invoke()
         {
-            return View();
+            return View("Blogs");
         }
     }
 }
