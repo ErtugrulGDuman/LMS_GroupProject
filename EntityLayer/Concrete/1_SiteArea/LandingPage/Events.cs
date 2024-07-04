@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityLayer.Concrete
+namespace EntityLayer.Concrete.Fronthand.LandingPage
 {
-    public class Activity
+    public class Events
     {
-        public int ActivityId { get; set; }
+        public int EventsId { get; set; }
         public string ImageUrl { get; set; }
         public DateTime Date { get; set; }
         public string Title { get; set; }

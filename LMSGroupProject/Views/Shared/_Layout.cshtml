@@ -25,11 +25,52 @@
 
 
 
-    @RenderBody()
+@RenderBody()
 
 
 
 </body>
+
+<!-- Start Searh Banner
+============================================= -->
+@await Component.InvokeAsync("_DefaultSearhBannerComponentPartial")
+<!-- End Searh Banner -->
+<!-- Start Weekly Top
+============================================= -->
+@await Component.InvokeAsync("_DefaultWeekTopComponentPartial")
+<!-- End Weekly Top -->
+<!-- Start Registrationg
+============================================= -->
+@await Component.InvokeAsync("_DefaultRegisterTodayComponentPartial")
+<!-- End Registrationg -->
+<!-- Start Top Categories
+============================================= -->
+<!-- End Top Categories -->
+@await Component.InvokeAsync("_DefaultTopCategoriesComponentPartial")
+<!-- Start Advisor
+============================================= -->
+@await Component.InvokeAsync("_DefaultExperinceAdvisorsComponentPartial")
+<!-- End Advisor -->
+<!-- Start Upcaming Events
+============================================= -->
+@await Component.InvokeAsync("_DefaultUpComingEventsComponentPartial")
+<!-- End UpComing Events -->
+<!-- Start Feature Counters Factor
+============================================= -->
+@await Component.InvokeAsync("_DefaultFeatureCountersComponentPartial")
+<!-- End Feature Counters Factor -->
+<!-- Start Testimonials
+============================================= -->
+@await Component.InvokeAsync("_DefaultTestimonialsComponentPartial")
+<!-- End Testimonials -->
+<!-- Start Blog
+============================================= -->
+@await Component.InvokeAsync("_DefaultBlogComponentPartial")
+<!-- End Blog -->
+<!-- Start Newsletter
+============================================= -->
+@await Component.InvokeAsync("_DefaultNewsletterComponentPartial")
+<!-- End Newsletter -->
 <!-- Start Footer
 ============================================= -->
 <footer class="bg-light">

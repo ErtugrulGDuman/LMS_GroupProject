@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityLayer.Conrete
+namespace EntityLayer.Concrete.Fronthand.LandingPage
 {
-    public class Course
+    public class Blog
     {
-        public int CourseId { get; set; }
+        public int BlogId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }
-        public decimal Price { get; set; }
-        public TimeSpan Duration { get; set; }
+        public string Writer { get; set; }
+        public DateTime Date { get; set; }
+
     }
 }

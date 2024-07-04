@@ -19,4 +19,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Concrete\2_AdminArea\Instructor\" />
+    <Folder Include="Concrete\2_AdminArea\Admin\" />
+    <Folder Include="Concrete\2_AdminArea\Student\" />
+  </ItemGroup>
+
 </Project>

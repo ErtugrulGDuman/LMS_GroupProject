@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EntityLayer.Concrete.AdminArea.General;
 
 namespace EntityLayer.Concrete
 {
@@ -13,6 +14,13 @@ namespace EntityLayer.Concrete
         public string Description { get; set; }
         public decimal Price { get; set; }
         public string ImageUrl { get; set; }
-        public string Duration { get; set; }
+        public TimeSpan Duration { get; set; }
+
+        public int CategoryId { get; set; }
+        public virtual Category Category { get; set; }
+        public int InstructorId { get; set; }
+        public virtual Instructor Instructor { get; set; }
+
+
     }
 }
