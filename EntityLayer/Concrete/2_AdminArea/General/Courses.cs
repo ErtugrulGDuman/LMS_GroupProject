@@ -17,7 +17,7 @@ namespace EntityLayer.Concrete
         public TimeSpan Duration { get; set; }
 
         public int CategoryId { get; set; }
-        public virtual Category Category { get; set; }
+        public virtual CourseCategory Category { get; set; }
         public int InstructorId { get; set; }
         public virtual Instructor Instructor { get; set; }
 

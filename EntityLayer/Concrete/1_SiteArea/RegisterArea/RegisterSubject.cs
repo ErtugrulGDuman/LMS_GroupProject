@@ -11,6 +11,5 @@ namespace EntityLayer.Concrete.SiteArea.RegisterArea
         public int RegisterSubjectId { get; set; }
         public string SubjectName { get; set; }
         public int RegisterId { get; set; }
-        public virtual Register Register { get; set; }
     }
 }
