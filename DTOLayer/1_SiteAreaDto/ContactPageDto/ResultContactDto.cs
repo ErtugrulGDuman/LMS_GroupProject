@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace DTOLayer._1_SiteAreaDto.ContactPageDto
 {
-    internal class ResultContactDto
+    public class ResultContactDto
     {
+        public int ContactId { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Subject { get; set; }
+        public string Message { get; set; }
     }
 }

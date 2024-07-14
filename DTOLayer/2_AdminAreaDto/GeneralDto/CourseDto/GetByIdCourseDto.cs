@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTOLayer._1_SiteAreaDto.ContactPageDto
+namespace DTOLayer._2_AdminAreaDto.GeneralDto.CourseDto
 {
-    public class GetByIdContactDto
+    public class GetByIdCourseDto
     {
-        public int ContactId { get; set; }
+        public int CoursesId { get; set; }
     }
 }
