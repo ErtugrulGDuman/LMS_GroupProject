@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTOLayer._1_SiteAreaDto.ContactPageDto
+namespace EntityLayer.Concrete._1_SiteArea.LoginArea
 {
-    public class GetByIdContactDto
+    public class AppRole
     {
-        public int ContactId { get; set; }
     }
 }
