@@ -7,8 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Concrete\" />
-    <Folder Include="Services\2_LandingPages\" />
+    <Folder Include="Abstract\2_AdminAreaServices\" />
   </ItemGroup>
 
   <ItemGroup>
