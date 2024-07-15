@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace BusinessLayer.Concrete._1_SiteAreaManagers
 {
     public class ContactManager : IContactService
