@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract._1_SiteAreaServices;
+using DataAccessLayer.Abstract;
 using EntityLayer.Concrete.Fronthand.LandingPage;
 using System;
 using System.Collections.Generic;
@@ -11,29 +12,36 @@ namespace BusinessLayer.Concrete._1_SiteAreaManagers
 {
     public class EventsManager : IEventsService
     {
+        private readonly IEventsDal _eventsDal;
+
+        public EventsManager(IEventsDal eventsDal)
+        {
+            _eventsDal = eventsDal;
+        }
+
         public void TAdd(Events t)
         {
-            throw new NotImplementedException();
+            _eventsDal.Insert(t);
         }
 
         public void TDelete(Events t)
         {
-            throw new NotImplementedException();
+            _eventsDal.Delete(t);
         }
 
         public Events TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _eventsDal.GetByID(id);
         }
 
         public List<Events> TGetList()
         {
-            throw new NotImplementedException();
+            return _eventsDal.GetList();
         }
 
         public void TUpdate(Events t)
         {
-            throw new NotImplementedException();
+            _eventsDal.Update(t);
         }
     }
 }

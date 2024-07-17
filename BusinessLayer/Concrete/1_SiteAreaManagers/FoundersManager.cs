@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract._1_SiteAreaServices;
+using DataAccessLayer.Abstract;
 using EntityLayer.Concrete.Fronthand.LandingPage;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace BusinessLayer.Concrete._1_SiteAreaManagers
 {
     public class FoundersManager : IFoundersService
     {
+        private readonly IFoundersDal _foundersDal;
+
+        public FoundersManager(IFoundersDal foundersDal)
+        {
+            _foundersDal = foundersDal;
+        }
+
         public void TAdd(Founders t)
         {
-            throw new NotImplementedException();
+            _foundersDal.Insert(t);
         }
 
         public void TDelete(Founders t)
         {
-            throw new NotImplementedException();
+            _foundersDal.Delete(t);
         }
 
         public Founders TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _foundersDal.GetByID(id);
         }
 
         public List<Founders> TGetList()
         {
-            throw new NotImplementedException();
+            return _foundersDal.GetList();
         }
 
         public void TUpdate(Founders t)
         {
-            throw new NotImplementedException();
+            _foundersDal.Update(t);
         }
     }
 }

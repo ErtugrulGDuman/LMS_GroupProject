@@ -1,4 +1,6 @@
 ﻿using BusinessLayer.Abstract._1_SiteAreaServices;
+using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete.Fronthand.LandingPage;
 using System;
 using System.Collections.Generic;
@@ -10,29 +12,36 @@ namespace BusinessLayer.Concrete._1_SiteAreaManagers
 {
     public class AboutManager : IAboutService
     {
+        private readonly IAboutDal _aboutDal;
+
+        public AboutManager(IAboutDal aboutDal)
+        {
+            _aboutDal = aboutDal;
+        }
+
         public void TAdd(About t)
         {
-            throw new NotImplementedException();
+            _aboutDal.Insert(t);
         }
 
         public void TDelete(About t)
         {
-            throw new NotImplementedException();
+            _aboutDal.Delete(t);
         }
 
         public About TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _aboutDal.GetByID(id);
         }
 
         public List<About> TGetList()
         {
-            throw new NotImplementedException();
+            return _aboutDal.GetList();
         }
 
         public void TUpdate(About t)
         {
-            throw new NotImplementedException();
+            _aboutDal.Update(t);
         }
     }
 }

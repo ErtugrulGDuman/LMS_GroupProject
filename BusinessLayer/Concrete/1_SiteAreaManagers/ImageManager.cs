@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract._1_SiteAreaServices;
+using DataAccessLayer.Abstract;
 using EntityLayer.Concrete._1_SiteArea.LandingPage;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace BusinessLayer.Concrete._1_SiteAreaManagers
 {
     public class ImageManager : IImageServices
     {
+        private readonly IImageDal _ımageDal;
+
+        public ImageManager(IImageDal ımageDal)
+        {
+            _ımageDal = ımageDal;
+        }
+
         public void TAdd(Image t)
         {
-            throw new NotImplementedException();
+            _ımageDal.Insert(t);
         }
 
         public void TDelete(Image t)
         {
-            throw new NotImplementedException();
+            _ımageDal.Delete(t);
         }
 
         public Image TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _ımageDal.GetByID(id);
         }
 
         public List<Image> TGetList()
         {
-            throw new NotImplementedException();
+            return _ımageDal.GetList();
         }
 
         public void TUpdate(Image t)
         {
-            throw new NotImplementedException();
+            _ımageDal.Update(t);
         }
     }
 }
