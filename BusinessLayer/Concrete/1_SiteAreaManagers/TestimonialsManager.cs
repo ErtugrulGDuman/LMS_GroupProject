@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract._1_SiteAreaServices;
+using DataAccessLayer.Abstract;
 using EntityLayer.Concrete.Fronthand.LandingPage;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace BusinessLayer.Concrete._1_SiteAreaManagers
 {
     public class TestimonialsManager : ITestimonialsService
     {
+        private readonly ITestimonialsDal _testimonialsDal;
+
+        public TestimonialsManager(ITestimonialsDal testimonialsDal)
+        {
+            _testimonialsDal = testimonialsDal;
+        }
+
         public void TAdd(Testimonials t)
         {
-            throw new NotImplementedException();
+            _testimonialsDal.Insert(t);
         }
 
         public void TDelete(Testimonials t)
         {
-            throw new NotImplementedException();
+            _testimonialsDal.Delete(t);
         }
 
         public Testimonials TGetByID(int id)
         {
-            throw new NotImplementedException();
+           return _testimonialsDal.GetByID(id);
         }
 
         public List<Testimonials> TGetList()
         {
-            throw new NotImplementedException();
+            return _testimonialsDal.GetList();
         }
 
         public void TUpdate(Testimonials t)
         {
-            throw new NotImplementedException();
+            _testimonialsDal.Update(t);
         }
     }
 }
