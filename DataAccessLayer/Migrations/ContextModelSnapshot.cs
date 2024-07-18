@@ -76,6 +76,99 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("Images");
                 });
 
+            modelBuilder.Entity("EntityLayer.Concrete._2_AdminArea.General.CourseFeatures", b =>
+                {
+                    b.Property<int>("CourseFeaturesId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CourseFeaturesId"), 1L, 1);
+
+                    b.Property<TimeSpan>("Duration")
+                        .HasColumnType("time");
+
+                    b.Property<string>("Language")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Level")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ResgisteredPerson")
+                        .HasColumnType("int");
+
+                    b.HasKey("CourseFeaturesId");
+
+                    b.ToTable("CourseFeatures");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.AdminArea.General.CourseCategory", b =>
+                {
+                    b.Property<int>("CourseCategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CourseCategoryId"), 1L, 1);
+
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IconUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CourseCategoryId");
+
+                    b.ToTable("CourseCategories");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Courses", b =>
+                {
+                    b.Property<int>("CoursesId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CoursesId"), 1L, 1);
+
+                    b.Property<int>("CourseCategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<TimeSpan>("Duration")
+                        .HasColumnType("time");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("InstructorId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CoursesId");
+
+                    b.HasIndex("CourseCategoryId");
+
+                    b.HasIndex("InstructorId");
+
+                    b.ToTable("Courses");
+                });
+
             modelBuilder.Entity("EntityLayer.Concrete.Fronthand.LandingPage.About", b =>
                 {
                     b.Property<int>("AboutId")
@@ -161,7 +254,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("EventsId");
 
-                    b.ToTable("Eventses");
+                    b.ToTable("Events");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Fronthand.LandingPage.Founders", b =>
@@ -210,7 +303,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("FoundersId");
 
-                    b.ToTable("Founderses");
+                    b.ToTable("Founders");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Fronthand.LandingPage.Testimonials", b =>
@@ -243,7 +336,36 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("TestimonialsId");
 
-                    b.ToTable("Testimonialses");
+                    b.ToTable("Testimonials");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Instructor", b =>
+                {
+                    b.Property<int>("InstructorId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("InstructorId"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("InstructorId");
+
+                    b.ToTable("Instructors");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.SiteArea.ContactPage.Contact", b =>
@@ -338,6 +460,25 @@ namespace DataAccessLayer.Migrations
                     b.HasKey("RegisterSubjectId");
 
                     b.ToTable("RegisterSubjects");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Courses", b =>
+                {
+                    b.HasOne("EntityLayer.Concrete.AdminArea.General.CourseCategory", "CourseCategory")
+                        .WithMany()
+                        .HasForeignKey("CourseCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EntityLayer.Concrete.Instructor", "Instructor")
+                        .WithMany()
+                        .HasForeignKey("InstructorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CourseCategory");
+
+                    b.Navigation("Instructor");
                 });
 #pragma warning restore 612, 618
         }

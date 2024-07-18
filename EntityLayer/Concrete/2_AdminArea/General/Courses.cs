@@ -16,11 +16,9 @@ namespace EntityLayer.Concrete
         public string ImageUrl { get; set; }
         public TimeSpan Duration { get; set; }
 
-        public int CategoryId { get; set; }
-        public virtual CourseCategory Category { get; set; }
+        public int CourseCategoryId { get; set; }
+        public virtual CourseCategory  CourseCategory { get; set; }
         public int InstructorId { get; set; }
         public virtual Instructor Instructor { get; set; }
-
-
     }
 }

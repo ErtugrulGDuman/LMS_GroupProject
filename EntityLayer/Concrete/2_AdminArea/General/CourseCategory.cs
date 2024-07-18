@@ -8,7 +8,7 @@ namespace EntityLayer.Concrete.AdminArea.General
 {
     public class CourseCategory
     {
-        public int CategoryId { get; set; }
+        public int CourseCategoryId { get; set; }
         public string CategoryName { get; set; }
         public string ImageUrl { get; set; }
         public string IconUrl { get; set; }
