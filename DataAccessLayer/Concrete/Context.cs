@@ -2,7 +2,7 @@
 using EntityLayer.Concrete._1_SiteArea.LandingPage;
 using EntityLayer.Concrete._1_SiteArea.LoginArea;
 using EntityLayer.Concrete._2_AdminArea.General;
-using EntityLayer.Concrete.AdminArea.General;
+
 using EntityLayer.Concrete.Fronthand.LandingPage;
 using EntityLayer.Concrete.SiteArea.ContactPage;
 using EntityLayer.Concrete.SiteArea.RegisterArea;

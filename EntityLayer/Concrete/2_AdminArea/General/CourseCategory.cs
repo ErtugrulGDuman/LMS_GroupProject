@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityLayer.Concrete.AdminArea.General
+namespace EntityLayer.Concrete._2_AdminArea.General
 {
     public class CourseCategory
     {
