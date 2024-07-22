@@ -20,7 +20,8 @@ namespace BusinessLayer.Concrete._2_AdminManagers
 
         public void TDelete(int id)
         {
-            _courseCategoryDal.Delete(id);
+                _courseCategoryDal.Delete(id);
+       
         }
 
         public CourseCategory TGetByID(int id)

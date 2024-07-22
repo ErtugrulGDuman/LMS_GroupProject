@@ -1,10 +1,11 @@
-﻿using DataAccessLayer.Concrete;
+﻿
 using GroupProject.DataAccessLayer.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccessLayer.Concrete;
 
 namespace DataAccessLayer.Repository
 {
@@ -12,7 +13,12 @@ namespace DataAccessLayer.Repository
 
     public class GenericRepository<T> : IGenericDal<T> where T : class
     {
-        Context _context = new Context();
+        private readonly Context _context;
+
+        public GenericRepository(Context context)
+        {
+            _context = context;
+        }
 
 
         public void Insert(T entity)
