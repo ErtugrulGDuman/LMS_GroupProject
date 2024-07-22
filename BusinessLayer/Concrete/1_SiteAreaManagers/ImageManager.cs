@@ -21,27 +21,27 @@ namespace BusinessLayer.Concrete._1_SiteAreaManagers
 
         public void TInsert(Image entity)
         {
-            throw new NotImplementedException();
+            _imageDal.Insert(entity);
         }
 
         public void TDelete(int id)
         {
-            throw new NotImplementedException();
+            _imageDal.Delete(id);
         }
 
         public void TUpdate(Image entity)
         {
-            throw new NotImplementedException();
+            _imageDal.Update(entity);
         }
 
         public List<Image> TGetList()
         {
-            throw new NotImplementedException();
+            return _imageDal.GetListAll();
         }
 
         public Image TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _imageDal.GetByID(id);
         }
     }
 }

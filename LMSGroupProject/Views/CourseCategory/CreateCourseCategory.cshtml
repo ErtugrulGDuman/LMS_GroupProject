@@ -1,0 +1,26 @@
+﻿@model EntityLayer.Concrete._2_AdminArea.General.CourseCategory
+@{
+    ViewData["Title"] = "CreateCourseCategory";
+    Layout = "~/Views/Shared/_Layout_Dashboard.cshtml";
+}
+
+<div class="bg-custom p-2 text-center">
+    <h4 class="m-0">Eğitim Kategorileri Ekleme</h4>
+</div>
+
+<form method="post">
+    <div class="container">
+        <br /><br />
+        <h2>Yeni Kategori Girişi</h2>
+        <label>Kategori Adı</label>
+        <input type="text" class="form-control" asp-for="CategoryName" />
+        <br />
+        <label>Kategori Image</label>
+        <input type="file" class="form-control" asp-for="ImageUrl" />
+        <br />
+        <label>Kategori Icon</label>
+        <input type="file" class="form-control" asp-for="IconUrl" />
+        <br />
+        <button class="btn btn-info">Kategori Kaydet</button>
+    </div>
+</form>

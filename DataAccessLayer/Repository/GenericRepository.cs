@@ -34,10 +34,11 @@ namespace DataAccessLayer.Repository
             _context.SaveChanges();
         }
 
-        public List<T> GetList()
+        public List<T> GetListAll()
         {
             return _context.Set<T>().ToList();
         }
+
 
         public T GetByID(int id)
         {

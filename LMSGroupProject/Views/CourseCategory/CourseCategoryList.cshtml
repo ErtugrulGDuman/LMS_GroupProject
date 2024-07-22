@@ -1,0 +1,49 @@
+﻿@model IEnumerable<EntityLayer.Concrete._2_AdminArea.General.CourseCategory>   
+@{
+    ViewData["Title"] = "CourseCategoryList";
+    Layout = "~/Views/Shared/_Layout_Dashboard.cshtml";
+}
+
+
+
+    <div class="bg-custom p-2 text-center">
+        <h4 class="m-0">Eğitim Kategorileri Sayfası</h4>
+    </div>
+
+    <div class="container mt-4">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Kategori Adı</th>
+                    <th>Kategori Resmi</th>
+                    <th>Kategori Iconu</th>
+                    <th>Sil</th>
+                    <th>Güncelle</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.CourseCategoryId</td>
+                        <td>@item.CategoryName</td>
+                        <td>
+                            <img src="@item.ImageUrl" style="width: 50px; height: 50px;" />
+                        </td>
+                        <td>
+                            <img src="@item.IconUrl" style="width: 50px; height: 50px;" />
+                        </td>
+                        <td>
+                            <a href="#" class="btn btn-outline-danger">Sil</a>
+                        </td>
+                        <td>
+                            <a href="#" class="btn btn-outline-success">Güncelle</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a href="#" class="btn btn-outline-success">Güncelle</a>
+    </div>
+
