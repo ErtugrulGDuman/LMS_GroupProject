@@ -18,14 +18,9 @@ namespace BusinessLayer.Concrete._2_AdminManagers
             _courseCategoryDal = courseCategoryDal;
         }
 
-        public void TAdd(CourseCategory t)
+        public void TDelete(int id)
         {
-            _courseCategoryDal.Insert(t);
-        }
-
-        public void TDelete(CourseCategory t)
-        {
-            _courseCategoryDal.Delete(t);
+            _courseCategoryDal.Delete(id);
         }
 
         public CourseCategory TGetByID(int id)
@@ -35,12 +30,17 @@ namespace BusinessLayer.Concrete._2_AdminManagers
 
         public List<CourseCategory> TGetList()
         {
-            return _courseCategoryDal.GetList();
+            return _courseCategoryDal.GetListAll();
         }
 
-        public void TUpdate(CourseCategory t)
+        public void TInsert(CourseCategory entity)
         {
-            _courseCategoryDal.Update(t);
+            _courseCategoryDal.Insert(entity);
+        }
+
+        public void TUpdate(CourseCategory entity)
+        {
+            _courseCategoryDal.Update(entity);
         }
     }
 }

@@ -12,6 +12,5 @@ namespace EntityLayer.Concrete._2_AdminArea.General
         public string CategoryName { get; set; }
         public string ImageUrl { get; set; }
         public string IconUrl { get; set; }
-        
     }
 }

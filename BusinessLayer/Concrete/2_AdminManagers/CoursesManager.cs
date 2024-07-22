@@ -18,29 +18,32 @@ namespace BusinessLayer.Concrete._2_AdminManagers
             _coursesDal = coursesDal;
         }
 
-        public void TAdd(Courses t)
+
+        public void TInsert(Courses entity)
         {
-            _coursesDal.Insert(t);
+            _coursesDal.Insert(entity);
+            
         }
 
-        public void TDelete(Courses t)
+        public void TDelete(int id)
         {
-            _coursesDal.Delete(t);
+            _coursesDal.Delete(id);
+            
+        }
+
+        public void TUpdate(Courses entity)
+        {
+            _coursesDal.Update(entity);
+        }
+
+        public List<Courses> TGetList()
+        {
+            return _coursesDal.GetListAll();
         }
 
         public Courses TGetByID(int id)
         {
             return _coursesDal.GetByID(id);
-        }
-
-        public List<Courses> TGetList()
-        {
-            return _coursesDal.GetList();
-        }
-
-        public void TUpdate(Courses t)
-        {
-            _coursesDal.Update(t);
         }
     }
 }

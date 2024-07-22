@@ -20,27 +20,27 @@ namespace BusinessLayer.Concrete._1_SiteAreaManagers
 
         public void TInsert(Register entity)
         {
-            throw new NotImplementedException();
+            _registerDal.Insert(entity);
         }
 
         public void TDelete(int id)
         {
-            throw new NotImplementedException();
+            _registerDal.Delete(id);
         }
 
         public void TUpdate(Register entity)
         {
-            throw new NotImplementedException();
+            _registerDal.Update(entity);    
         }
 
         public List<Register> TGetList()
         {
-            throw new NotImplementedException();
+            return _registerDal.GetListAll();
         }
 
         public Register TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _registerDal.GetByID(id);
         }
     }
 }

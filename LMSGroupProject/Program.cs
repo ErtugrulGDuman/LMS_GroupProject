@@ -1,7 +1,23 @@
+using BusinessLayer.Abstract._2_AdminAreaServices;
+using BusinessLayer.Concrete._2_AdminManagers;
+using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+#region Eklenen Servisler
+
+builder.Services.AddDbContext<Context>();
+builder.Services.AddScoped<ICourseCategoryService, CourseCategoryManager>();
+builder.Services.AddScoped<ICourseCategoryDal, EfCourseCategoryDal>();
+
+#endregion
+
+
 
 var app = builder.Build();
 
