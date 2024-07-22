@@ -18,30 +18,30 @@ namespace BusinessLayer.Concrete._1_SiteAreaManagers
         {
             _eventsDal = eventsDal;
         }
-
-        public void TAdd(Events t)
+        
+        public void TInsert(Events entity)
         {
-            _eventsDal.Insert(t);
+            _eventsDal.Insert(entity);
         }
 
-        public void TDelete(Events t)
+        public void TDelete(int id)
         {
-            _eventsDal.Delete(t);
+            _eventsDal.Delete(id);
+        }
+
+        public void TUpdate(Events entity)
+        {
+            _eventsDal.Update(entity);
+        }
+
+        public List<Events> TGetList()
+        {
+           return _eventsDal.GetListAll();
         }
 
         public Events TGetByID(int id)
         {
             return _eventsDal.GetByID(id);
-        }
-
-        public List<Events> TGetList()
-        {
-            return _eventsDal.GetList();
-        }
-
-        public void TUpdate(Events t)
-        {
-            _eventsDal.Update(t);
         }
     }
 }

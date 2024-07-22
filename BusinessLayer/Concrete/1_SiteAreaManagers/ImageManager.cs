@@ -11,36 +11,37 @@ namespace BusinessLayer.Concrete._1_SiteAreaManagers
 {
     public class ImageManager : IImageServices
     {
-        private readonly IImageDal _ımageDal;
+        private readonly IImageDal _imageDal;
 
-        public ImageManager(IImageDal ımageDal)
+        public ImageManager(IImageDal imageDal)
         {
-            _ımageDal = ımageDal;
+            _imageDal = imageDal;
         }
 
-        public void TAdd(Image t)
+
+        public void TInsert(Image entity)
         {
-            _ımageDal.Insert(t);
+            throw new NotImplementedException();
         }
 
-        public void TDelete(Image t)
+        public void TDelete(int id)
         {
-            _ımageDal.Delete(t);
+            throw new NotImplementedException();
         }
 
-        public Image TGetByID(int id)
+        public void TUpdate(Image entity)
         {
-            return _ımageDal.GetByID(id);
+            throw new NotImplementedException();
         }
 
         public List<Image> TGetList()
         {
-            return _ımageDal.GetList();
+            throw new NotImplementedException();
         }
 
-        public void TUpdate(Image t)
+        public Image TGetByID(int id)
         {
-            _ımageDal.Update(t);
+            throw new NotImplementedException();
         }
     }
 }

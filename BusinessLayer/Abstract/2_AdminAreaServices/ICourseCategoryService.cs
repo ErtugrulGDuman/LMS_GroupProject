@@ -1,6 +1,5 @@
 ﻿
 using EntityLayer.Concrete._2_AdminArea.General;
-using GroupProject.BusinessLayer.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;

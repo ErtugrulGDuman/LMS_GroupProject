@@ -1,5 +1,4 @@
 ﻿using EntityLayer.Concrete.SiteArea.RegisterArea;
-using GroupProject.BusinessLayer.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;

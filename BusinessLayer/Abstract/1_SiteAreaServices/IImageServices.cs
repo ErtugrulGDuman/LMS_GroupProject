@@ -1,5 +1,4 @@
 ﻿using EntityLayer.Concrete._1_SiteArea.LandingPage;
-using GroupProject.BusinessLayer.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;

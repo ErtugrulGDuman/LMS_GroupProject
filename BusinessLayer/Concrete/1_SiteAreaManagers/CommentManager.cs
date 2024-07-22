@@ -18,29 +18,30 @@ namespace BusinessLayer.Concrete._1_SiteAreaManagers
             _commentDal = commentDal;
         }
 
-        public void TAdd(Comment t)
+
+        public void TInsert(Comment entity)
         {
-            _commentDal.Insert(t);
+            _commentDal.Insert(entity);
         }
 
-        public void TDelete(Comment t)
+        public void TDelete(int id)
         {
-            _commentDal.Delete(t);
+            _commentDal.Delete(id);
+        }
+
+        public void TUpdate(Comment entity)
+        {
+            _commentDal.Update(entity);
+        }
+
+        public List<Comment> TGetList()
+        {
+            return _commentDal.GetListAll();
         }
 
         public Comment TGetByID(int id)
         {
             return _commentDal.GetByID(id);
-        }
-
-        public List<Comment> TGetList()
-        {
-            return _commentDal.GetList();
-        }
-
-        public void TUpdate(Comment t)
-        {
-            _commentDal.Update(t);
         }
     }
 }

@@ -17,30 +17,30 @@ namespace BusinessLayer.Concrete._1_SiteAreaManagers
         {
             _testimonialsDal = testimonialsDal;
         }
-
-        public void TAdd(Testimonials t)
+        
+        public void TInsert(Testimonials entity)
         {
-            _testimonialsDal.Insert(t);
+            throw new NotImplementedException();
         }
 
-        public void TDelete(Testimonials t)
+        public void TDelete(int id)
         {
-            _testimonialsDal.Delete(t);
+            throw new NotImplementedException();
         }
 
-        public Testimonials TGetByID(int id)
+        public void TUpdate(Testimonials entity)
         {
-           return _testimonialsDal.GetByID(id);
+            throw new NotImplementedException();
         }
 
         public List<Testimonials> TGetList()
         {
-            return _testimonialsDal.GetList();
+            throw new NotImplementedException();
         }
 
-        public void TUpdate(Testimonials t)
+        public Testimonials TGetByID(int id)
         {
-            _testimonialsDal.Update(t);
+            throw new NotImplementedException();
         }
     }
 }
