@@ -18,29 +18,29 @@ namespace BusinessLayer.Concrete._1_SiteAreaManagers
             _foundersDal = foundersDal;
         }
 
-        public void TAdd(Founders t)
+        public void TInsert(Founders entity)
         {
-            _foundersDal.Insert(t);
+            _foundersDal.Insert(entity);
         }
 
-        public void TDelete(Founders t)
+        public void TDelete(int id)
         {
-            _foundersDal.Delete(t);
+            _foundersDal.Delete(id);
+        }
+
+        public void TUpdate(Founders entity)
+        {
+            _foundersDal.Update(entity);
+        }
+
+        public List<Founders> TGetList()
+        {
+            return _foundersDal.GetListAll();
         }
 
         public Founders TGetByID(int id)
         {
             return _foundersDal.GetByID(id);
-        }
-
-        public List<Founders> TGetList()
-        {
-            return _foundersDal.GetList();
-        }
-
-        public void TUpdate(Founders t)
-        {
-            _foundersDal.Update(t);
         }
     }
 }

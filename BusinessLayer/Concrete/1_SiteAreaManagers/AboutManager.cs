@@ -18,30 +18,29 @@ namespace BusinessLayer.Concrete._1_SiteAreaManagers
         {
             _aboutDal = aboutDal;
         }
-
-        public void TAdd(About t)
+        public void TInsert(About entity)
         {
-            _aboutDal.Insert(t);
+            _aboutDal.Insert(entity);
         }
 
-        public void TDelete(About t)
+        public void TDelete(int id)
         {
-            _aboutDal.Delete(t);
+            _aboutDal.Delete(id);
+        }
+
+        public void TUpdate(About entity)
+        {
+            _aboutDal.Update(entity);
+        }
+
+        public List<About> TGetList()
+        {
+            return _aboutDal.GetListAll();
         }
 
         public About TGetByID(int id)
         {
             return _aboutDal.GetByID(id);
-        }
-
-        public List<About> TGetList()
-        {
-            return _aboutDal.GetList();
-        }
-
-        public void TUpdate(About t)
-        {
-            _aboutDal.Update(t);
         }
     }
 }

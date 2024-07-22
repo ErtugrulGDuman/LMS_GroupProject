@@ -5,34 +5,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccessLayer.Abstract;
 
 namespace BusinessLayer.Concrete._1_SiteAreaManagers
 {
     public class AppRoleManager : IAppRoleService
     {
-        public void TAdd(AppRole t)
+        private readonly IAppRoleDal _appRoleDal;
+
+        public AppRoleManager(IAppRoleDal appRoleDal)
         {
-            throw new NotImplementedException();
+            _appRoleDal = appRoleDal;
         }
 
-        public void TDelete(AppRole t)
+        public void TInsert(AppRole entity)
         {
-            throw new NotImplementedException();
+            _appRoleDal.Insert(entity);
         }
 
-        public AppRole TGetByID(int id)
+        public void TDelete(int id)
         {
-            throw new NotImplementedException();
+            _appRoleDal.Delete(id);
+        }
+
+        public void TUpdate(AppRole entity)
+        {
+            _appRoleDal.Update(entity);
         }
 
         public List<AppRole> TGetList()
         {
-            throw new NotImplementedException();
+            return _appRoleDal.GetListAll();
         }
 
-        public void TUpdate(AppRole t)
+        public AppRole TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _appRoleDal.GetByID(id);
         }
     }
 }

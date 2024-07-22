@@ -5,22 +5,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccessLayer.Abstract;
 
 namespace BusinessLayer.Concrete._1_SiteAreaManagers
 {
     public class RegisterSubjectManager : IRegisterSubjectService
     {
-        public void TAdd(RegisterSubject t)
+        private readonly IRegisterSubjectDal _registerSubjectDal;
+
+        public RegisterSubjectManager(IRegisterSubjectDal registerSubjectDal)
+        {
+            _registerSubjectDal = registerSubjectDal;
+        }
+
+        public void TInsert(RegisterSubject entity)
         {
             throw new NotImplementedException();
         }
 
-        public void TDelete(RegisterSubject t)
+        public void TDelete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public RegisterSubject TGetByID(int id)
+        public void TUpdate(RegisterSubject entity)
         {
             throw new NotImplementedException();
         }
@@ -30,7 +38,7 @@ namespace BusinessLayer.Concrete._1_SiteAreaManagers
             throw new NotImplementedException();
         }
 
-        public void TUpdate(RegisterSubject t)
+        public RegisterSubject TGetByID(int id)
         {
             throw new NotImplementedException();
         }

@@ -19,29 +19,30 @@ namespace BusinessLayer.Concrete._1_SiteAreaManagers
             _blogDal = blogDal;
         }
 
-        public void TAdd(Blog t)
+
+        public void TInsert(Blog entity)
         {
-            _blogDal.Insert(t);
+            _blogDal.Insert(entity);
         }
 
-        public void TDelete(Blog t)
+        public void TDelete(int id)
         {
-            _blogDal.Delete(t);
+            _blogDal.Delete(id);
+        }
+
+        public void TUpdate(Blog entity)
+        {
+            _blogDal.Update(entity);
+        }
+
+        public List<Blog> TGetList()
+        {
+            return _blogDal.GetListAll();
         }
 
         public Blog TGetByID(int id)
         {
             return _blogDal.GetByID(id);
-        }
-
-        public List<Blog> TGetList()
-        {
-            return _blogDal.GetList();
-        }
-
-        public void TUpdate(Blog t)
-        {
-            _blogDal.Update(t);
         }
     }
 }

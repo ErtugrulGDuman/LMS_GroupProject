@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GroupProject.BusinessLayer.Abstract
+﻿namespace BusinessLayer.Abstract
 {
-    public interface IGenericService<T>
+    public interface IGenericService<T> where T : class
     {
-        void TAdd(T t);
-        void TDelete(T t);
-        void TUpdate(T t);
+        void TInsert(T entity);
+        void TDelete(int id);
+        void TUpdate(T entity);
         List<T> TGetList();
         T TGetByID(int id);
     }
