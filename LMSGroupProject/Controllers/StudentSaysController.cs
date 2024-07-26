@@ -2,7 +2,7 @@
 
 namespace LMSGroupProject.Controllers
 {
-    public class DashboardController : Controller
+    public class StudentSaysController : Controller
     {
         public IActionResult Index()
         {
