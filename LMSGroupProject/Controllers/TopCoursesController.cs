@@ -2,7 +2,7 @@
 
 namespace LMSGroupProject.Controllers
 {
-    public class DashboardController : Controller
+    public class TopCoursesController : Controller
     {
         public IActionResult Index()
         {
@@ -11,3 +11,4 @@ namespace LMSGroupProject.Controllers
     }
 }
 
+//...//
