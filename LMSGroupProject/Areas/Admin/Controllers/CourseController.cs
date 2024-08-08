@@ -19,13 +19,14 @@ namespace LMSGroupProject.Areas.Admin.Controllers
         {
             var values = _coursesService.TGetList();
             return View(values);
-            //return View();
+     
         }
-        //public IActionResult coursesDelete(int id)
-        //{
-        //    _coursesService.TDelete(id);
-        //    return RedirectToAction("CourseList");
-        //}
+        [Route("Admin/Course/coursesDelete")]
+        public IActionResult coursesDelete(int id)
+        {
+            _coursesService.TDelete(id);
+            return RedirectToAction("CourseList");
+        }
 
         //[HttpGet]
         //public IActionResult coursesUpdate(int id)
