@@ -14,6 +14,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Context>();
 builder.Services.AddScoped<ICourseCategoryService, CourseCategoryManager>();
 builder.Services.AddScoped<ICourseCategoryDal, EfCourseCategoryDal>();
+builder.Services.AddScoped<ICoursesService, CoursesManager>();
+builder.Services.AddScoped<ICoursesDal, EfCoursesDal>();
 
 #endregion
 

@@ -8,13 +8,18 @@ namespace LMSGroupProject.Areas.Admin.Controllers
     public class CourseController : Controller
     {
         private readonly ICoursesService _coursesService;
-       
+
+        public CourseController(ICoursesService coursesService)
+        {
+            _coursesService = coursesService;
+        }
+
         [Route("Admin/Course/CourseList")]
         public IActionResult CourseList()
         {
-            //var values = _coursesService.TGetList();
-            //return View(values);
-            return View();
+            var values = _coursesService.TGetList();
+            return View(values);
+            //return View();
         }
         //public IActionResult coursesDelete(int id)
         //{
