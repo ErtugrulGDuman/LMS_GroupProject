@@ -1,14 +1,24 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Abstract._2_AdminAreaServices;
+using Microsoft.AspNetCore.Mvc;
 
 namespace LMSGroupProject.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class InstructorController : Controller
     {
-        [Area("Admin")]
+        private readonly IInstructorService _instructorService;
+
+        public InstructorController(IInstructorService instructorService)
+        {
+            _instructorService = instructorService;
+        }
+
         [Route("Admin/Instructor/InstructorList")]
+
         public IActionResult InstructorList()
         {
-            return View();
+            var values = _instructorService.TGetList();
+            return View(values);
         }
     }
 }
