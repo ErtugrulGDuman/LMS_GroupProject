@@ -1,4 +1,6 @@
+using BusinessLayer.Abstract._1_SiteAreaServices;
 using BusinessLayer.Abstract._2_AdminAreaServices;
+using BusinessLayer.Concrete._1_SiteAreaManagers;
 using BusinessLayer.Concrete._2_AdminManagers;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
@@ -16,7 +18,10 @@ builder.Services.AddScoped<ICourseCategoryService, CourseCategoryManager>();
 builder.Services.AddScoped<ICourseCategoryDal, EfCourseCategoryDal>();
 builder.Services.AddScoped<ICoursesService, CoursesManager>();
 builder.Services.AddScoped<ICoursesDal, EfCoursesDal>();
-
+builder.Services.AddScoped<IInstructorService, InstructorManager>();
+builder.Services.AddScoped<IInstructorDal, EfInstructorDal>();
+builder.Services.AddScoped<IContactService, ContactManager>();
+builder.Services.AddScoped<IContactDal, EfContactDal>();
 #endregion
 
 
