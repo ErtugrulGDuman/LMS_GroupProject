@@ -20,7 +20,8 @@ namespace DataAccessLayer.Concrete
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlServer("server=EGD\\SQLEXPRESS;database=LMSGroupProjectDb;integrated security=true;"); // Ertugrul Server Bilgileri 
-            optionsBuilder.UseSqlServer("Data Source=ISTPC0307\\SQLEXPRESS;Initial Catalog=GroupProjectDB;User ID=sa;Password=Destek.1453;Trust Server Certificate=True"); //Emin Server Bilgileri
+            //optionsBuilder.UseSqlServer("Data Source=ISTPC0307\\SQLEXPRESS;Initial Catalog=GroupProjectDB;User ID=sa;Password=Destek.1453;Trust Server Certificate=True"); //Emin Server Bilgileri
+            optionsBuilder.UseSqlServer("server=DESKTOP-E4NV9FV;database=GroupProjectDB;integrated security=true;"); //Tuba Server Bilgileri
         }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Blog> Blogs { get; set; }

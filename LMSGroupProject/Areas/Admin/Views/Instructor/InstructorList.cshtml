@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "InstructorList";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-md">
+    <div class="card shadow-none border bg-light">
+        <div class="card-body">
+            <div class="text-label mb-3">Instructor</div>
+            <div id="cards-left" class="card-list">
+
+                @foreach (var instructor in Model)
+                {
+                    <div class="card">
+                        <div class="card-body media">
+                            <div class="media-left mr-3">
+                                <div class="avatar">
+                                    <img src="~/admin-lema/HTML/dist/assets/images/256_rsz_1andy-lee-642320-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle">
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <p>
+                                    <strong>@instructor.Name @instructor.Surname</strong><br>
+                                    <span class="text-muted">@instructor.Title</span>
+                                </p>
+                                <p class="text-muted mb-0"><em>@instructor.Description</em></p>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
